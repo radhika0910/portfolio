@@ -55,16 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const portraitElement = document.querySelector(".about-hero-portrait");
       if (portraitElement) {
         const portraitAnimation = gsap.to(".about-hero-portrait", {
-          x: "28vw", // Translate horizontally to the right
-          y: "-15vh", // Move up slightly
-          rotation: 15, // Rotate to a clean right-leaning angle
-          scale: 0.85, // Scale down slightly to look neat
+          y: -200, // Move up by 200px
+          rotation: -25, // Rotate -25 degrees
           scrollTrigger: {
             trigger: ".about-hero", // Trigger element
-            start: "top top", // Start pinning when top of hero hits top of viewport
-            end: "+=100%", // Pin for exactly 1 viewport height of scrolling
-            pin: true, // Pin the entire section in place
-            scrub: 1.5, // Increased scrub for extra smooth lag-free movement
+            start: "top top", // Start when top of hero hits top of viewport
+            end: "bottom top", // End when bottom of hero hits top of viewport
+            scrub: 1, // Tie animation to scroll position
           },
         });
         scrollTriggerInstances.push(portraitAnimation.scrollTrigger); // Store instance
@@ -146,44 +143,13 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTriggerInstances.push(tag5Animation.scrollTrigger); // Store instance
       }
     }
-
-    // Experience timeline reveal animation
-    const timelineItems = document.querySelectorAll(".timeline-item");
-    if (timelineItems.length > 0) {
-      const experienceAnimation = gsap.from(".timeline-item", {
-        y: 60,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.25,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".experience-section",
-          start: "top 80%", // Reveal when top of section enters 80% of viewport
-          toggleActions: "play none none none",
-        }
-      });
-      scrollTriggerInstances.push(experienceAnimation.scrollTrigger); // Store instance
-    }
   };
 
   // Run animations on page load
   initAnimations();
 
-  // Wait a short tick for all DOM updates/layout changes to settle, then refresh triggers
-  setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 200);
-
   // Re-run animations on window resize to recalculate trigger points
   window.addEventListener("resize", () => {
     initAnimations();
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 200);
-  });
-
-  // Call refresh on full page load (when images, fonts, styles are fully ready)
-  window.addEventListener("load", () => {
-    ScrollTrigger.refresh();
   });
 });
