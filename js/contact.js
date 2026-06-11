@@ -188,7 +188,17 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify(object)
       });
 
-      const result = await response.json();
+      const contentType = response.headers.get("content-type");
+      let result = {};
+      if (contentType && contentType.includes("application/json")) {
+        result = await response.json();
+      } else {
+        const text = await response.text();
+        if (response.status === 404 || text.includes("<!DOCTYPE html>")) {
+          throw new Error("Local API endpoint not found. Note: Serverless APIs (/api/*) require running 'vercel dev' locally instead of 'npm run dev'. Once deployed, it will work automatically!");
+        }
+        throw new Error("Server returned non-JSON response.");
+      }
       
       if (response.status === 200 || result.success) {
         form.reset();
