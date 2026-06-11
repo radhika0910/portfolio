@@ -163,25 +163,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Handle form submission with feedback
-  const handleFormSubmit = (e) => {
+  // Handle form submission with feedback and Nodemailer Vercel API integration
+  const handleFormSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
     const form = e.target;
     const submitBtn = form.querySelector(".submit-btn"); // Submit button
     const successMessage = document.getElementById("successMessage"); // Success message element
+    
     submitBtn.style.transform = "translateY(-1px)"; // Slight button press effect
     submitBtn.textContent = "Sending..."; // Update button text
     submitBtn.disabled = true; // Disable button
-    setTimeout(() => {
-      form.reset(); // Reset form
-      submitBtn.textContent = "Send Message"; // Restore button text
-      submitBtn.disabled = false; // Enable button
-      submitBtn.style.transform = ""; // Reset button style
-      successMessage.classList.add("show"); // Show success message
+
+    // Gather form inputs
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(object)
+      });
+
+      const result = await response.json();
+      
+      if (response.status === 200 || result.success) {
+        form.reset();
+        submitBtn.textContent = "Send Message";
+        submitBtn.disabled = false;
+        submitBtn.style.transform = "";
+        
+        // Show success confirmation
+        const p = successMessage.querySelector("p");
+        p.textContent = "Thanks! Your message has been sent. I'll get back to you within 24 hours.";
+        successMessage.classList.add("show");
+        setTimeout(() => {
+          successMessage.classList.remove("show");
+        }, 5000);
+      } else {
+        throw new Error(result.message || "Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      submitBtn.textContent = "Error sending";
+      submitBtn.disabled = false;
+      
+      // Display error info temporarily
+      const p = successMessage.querySelector("p");
+      const originalText = p.textContent;
+      p.innerHTML = `<span style="color: #ff5555;">Error: ${error.message || "Something went wrong. Please try again."}</span>`;
+      successMessage.classList.add("show");
+      
       setTimeout(() => {
-        successMessage.classList.remove("show"); // Hide after 5s
+        successMessage.classList.remove("show");
+        p.textContent = originalText;
+        submitBtn.textContent = "Send Message";
       }, 5000);
-    }, 1500); // Simulate form submission delay
+    }
   };
 
   // Enhance form inputs with focus/blur animations

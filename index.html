@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Radhika Bhoyar | Portfolio</title>
+    <title>Radhika Bhoyar | AI & Data Science Engineer</title>
+    <meta name="description" content="Portfolio of Radhika Bhoyar — AI & Data Science engineer specializing in ML models, ETL pipelines, and full-stack development. Winner of Smart India Hackathon." />
+    <meta name="keywords" content="Radhika Bhoyar, AI engineer, data science, machine learning, portfolio, Python, AWS" />
+    <meta name="author" content="Radhika Bhoyar" />
+    <meta property="og:title" content="Radhika Bhoyar | AI & Data Science Engineer" />
+    <meta property="og:description" content="AI & Data Science engineer turning messy data into aha! moments." />
+    <meta property="og:type" content="website" />
     <link rel="icon" href="/images/global/site-icon.png" />
 
     <link rel="stylesheet" href="/css/transition.css" />
@@ -12,12 +18,31 @@
     <link rel="stylesheet" href="/css/menu.css" />
     <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/about.css" />
-    <link rel="stylesheet" href="/css/project.css" />
+    <link rel="stylesheet" href="/css/experience.css" />
     <link rel="stylesheet" href="/css/contact.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/wow.css" />
 
   </head>
   <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-logo">
+          <span class="preloader-letter" style="--i:0">R</span>
+          <span class="preloader-dot">✦</span>
+          <span class="preloader-letter" style="--i:1">B</span>
+        </div>
+        <div class="preloader-bar">
+          <div class="preloader-bar-fill" id="preloaderBarFill"></div>
+        </div>
+        <p class="preloader-tagline mn">Loading Experience...</p>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-glow"></div>
     <!-- page transition  -->
     <div class="transition">
       <div class="transition-overlay overlay-1"></div>
@@ -33,6 +58,12 @@
           <div class="logo">
             <div class="logo-container">
               <p class="mn"><a href="/">R ✦ B</a></p>
+            </div>
+          </div>
+          <div class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">
+            <div class="theme-toggle-icon">
+              <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             </div>
           </div>
           <div class="menu-toggle-btn">
@@ -92,6 +123,8 @@
              
         <!-- home - hero -->
       <section class="hero">
+        <!-- Hero Particles -->
+        <div class="hero-particles" id="heroParticles"></div>
         <div class="hero-header-wrapper">
           <div class="hero-header hero-header-1">
             <h1>Radhika</h1>
@@ -105,10 +138,10 @@
             <img src="/images/global/symbols.png" alt="" />
           </div>
           <div class="hero-footer-scroll-down">
-            <p class="mn"><a href="#" target="_blank" class="resume-link"> Fetch // Resume</a></p>
+            <p class="mn"><a href="https://docs.google.com/document/d/1MOmmeTOxEFKJ7aQ1s87cGGSCM2M8uNif/edit?usp=sharing&ouid=113268318394227225350&rtpof=true&sd=true" target="_blank" class="resume-link"> Fetch // Resume</a></p>
           </div>
           <div class="hero-footer-tags">
-            <p class="mn">Focus Mode: ON 📷</p>
+            <p class="mn"><span class="rec-dot"></span> Focus Mode: ON 📷</p>
           </div>
         </div>
       </section>
@@ -146,18 +179,141 @@
     </div>
   </section>
 
+      <!-- Tech Stack Marquee -->
+      <section class="tech-marquee">
+        <div class="marquee-track">
+          <div class="marquee-content">
+            <span class="marquee-item">Python</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Machine Learning</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">PostgreSQL</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">AWS</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Next.js</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Docker</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Power BI</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Generative AI</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Flask</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Pandas</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">CI/CD</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">REST APIs</span>
+            <span class="marquee-separator">✦</span>
+          </div>
+          <div class="marquee-content" aria-hidden="true">
+            <span class="marquee-item">Python</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Machine Learning</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">PostgreSQL</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">AWS</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Next.js</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Docker</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Power BI</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Generative AI</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Flask</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">Pandas</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">CI/CD</span>
+            <span class="marquee-separator">✦</span>
+            <span class="marquee-item">REST APIs</span>
+            <span class="marquee-separator">✦</span>
+          </div>
+        </div>
+      </section>
 
+      <!-- Achievement Stats -->
+      <section class="achievements">
+        <div class="achievements-header">
+          <p class="mn">Track Record</p>
+          <h2>Numbers That Speak</h2>
+        </div>
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <h1 class="achievement-number" data-target="100" data-suffix="k+">0</h1>
+            <p class="mn">Records Processed</p>
+            <p class="achievement-detail">Enterprise analytics workloads across 25+ business dimensions</p>
+          </div>
+          <div class="achievement-card achievement-card-accent">
+            <h1 class="achievement-number" data-target="60" data-suffix="%">0</h1>
+            <p class="mn">Latency Reduced</p>
+            <p class="achievement-detail">Query optimization & indexing strategies for analytical processing</p>
+          </div>
+          <div class="achievement-card">
+            <h1 class="achievement-number" data-target="2" data-suffix="×">0</h1>
+            <p class="mn">Hackathons Won</p>
+            <p class="achievement-detail">Smart India Hackathon 2023 + Code by the Beach, BITS Pilani</p>
+          </div>
+          <div class="achievement-card achievement-card-glow">
+            <h1 class="achievement-number" data-target="40" data-suffix="+">0</h1>
+            <p class="mn">Members Mentored</p>
+            <p class="achievement-detail">As President of Codeware Coding Club, YCCE</p>
+          </div>
+        </div>
+      </section>
 
-
-
-
-
-
-
-
-
-
-      
+      <!-- home - experience -->
+      <section class="experience-section">
+        <div class="experience-container">
+          <div class="experience-header">
+            <p class="mn">Career Path</p>
+            <h2>Professional Experience</h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-info">
+                <div class="timeline-role-company">
+                  <h3>Software Engineer <span>@ Fendahl Technologies</span></h3>
+                </div>
+                <div class="timeline-date-location">
+                  <span class="date">July 2025 — Present</span>
+                  <p class="location">Nagpur, India</p>
+                </div>
+              </div>
+              <div class="timeline-details">
+                <ul>
+                  <li>Engineered core features using Python, SQL, REST APIs, and microservices architecture.</li>
+                  <li>Built a custom pivot table rendering engine to parse 100k+ rows and 25 business dimensions, reducing initial load latency to under 2.5 seconds.</li>
+                  <li>Designed LLM-driven structured JSON response workflows using prompt design to extract metadata from unstructured texts.</li>
+                  <li>Developed multi-tenant database systems and optimized query execution paths in PostgreSQL.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-info">
+                <div class="timeline-role-company">
+                  <h3>Software Engineering Intern <span>@ Fendahl Technologies</span></h3>
+                </div>
+                <div class="timeline-date-location">
+                  <span class="date">Feb 2025 — June 2025</span>
+                  <p class="location">Nagpur, India</p>
+                </div>
+              </div>
+              <div class="timeline-details">
+                <ul>
+                  <li>Contributed to database design, API integrations, and code optimization tasks.</li>
+                  <li>Collaborated in building scalable workflows using git-based collaboration and agile sprints.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- home - featured work -->
       <section class="featured-work">
@@ -165,35 +321,84 @@
         <div class="featured-titles">
           <div class="featured-title-wrapper">
             <h1 class="featured-title">Featured Projects</h1>
+            <p class="featured-subtitle ss">Selected Works 2023–2025</p>
           </div>
-          <div class="featured-title-wrapper">
+          <div class="featured-title-wrapper project-card">
             <div class="featured-title-img">
               <img src="/images/work-items/work-item-1.jpg" alt="JalRakshak" />
             </div>
             <h1 class="featured-title">JalRakshak</h1>
+            <div class="project-details">
+              <p class="project-desc">Smart water monitoring system using ETL pipelines for real-time sensor data, threshold-based anomalies, and AI predictive workflows.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Flask</span>
+                <span class="project-tag">Next.js</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" target="_blank">View Live ↗</a>
+                <a href="https://github.com/radhika0910" class="project-link" target="_blank">GitHub ↗</a>
+              </div>
+            </div>
           </div>
-          <div class="featured-title-wrapper">
+          <div class="featured-title-wrapper project-card">
             <div class="featured-title-img">
               <img src="/images/work-items/work-item-2.jpg" alt="FamWallet" />
             </div>
             <h1 class="featured-title">FamWallet</h1>
+            <div class="project-details">
+              <p class="project-desc">Family expense tracker featuring an automated AI spend-analysis report generated every 15 days with CI/CD GitOps deployment.</p>
+              <div class="project-tags">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">GitHub Actions</span>
+                <span class="project-tag">GitOps</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" target="_blank">View Live ↗</a>
+                <a href="https://github.com/radhika0910" class="project-link" target="_blank">GitHub ↗</a>
+              </div>
+            </div>
           </div>
-          <div class="featured-title-wrapper">
+          <div class="featured-title-wrapper project-card">
             <div class="featured-title-img">
-              <img src="/images/work-items/work-item-4.jpg" alt="Ayantra" />
+              <img src="/images/work-items/work-item-3.jpg" alt="Ayantra" />
             </div>
             <h1 class="featured-title">Ayantra</h1>
+            <div class="project-details">
+              <p class="project-desc">Distributed ride-sharing platform utilizing optimized PostgreSQL schemas and Apache Kafka-based event streaming for real-time matching.</p>
+              <div class="project-tags">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">Apache Kafka</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" target="_blank">View Live ↗</a>
+                <a href="https://github.com/radhika0910" class="project-link" target="_blank">GitHub ↗</a>
+              </div>
+            </div>
           </div>
-          <div class="featured-title-wrapper">
+          <div class="featured-title-wrapper project-card">
             <div class="featured-title-img">
-              <img src="/images/work-items/work-item-5.jpg" alt="Aap Ki Awaz" />
+              <img src="/images/work-items/work-item-4.jpg" alt="Aap Ki Awaz" />
             </div>
             <h1 class="featured-title">Aap Ki Awaz</h1>
+            <div class="project-details">
+              <p class="project-desc">A unified portal for anonymous civic issue reporting and resolution tracking.</p>
+              <div class="project-tags">
+                <span class="project-tag">Django</span>
+                <span class="project-tag">PostgreSQL</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" target="_blank">View Live ↗</a>
+                <a href="https://github.com/radhika0910" class="project-link" target="_blank">GitHub ↗</a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="featured-work-indicator"></div>
         <div class="featured-work-footer">
-          <p class="mn">Project Portfoliio [ 10 ]</p>
+          <p class="mn">Project Portfolio [ 4 ]</p>
           <p class="mn">///////////////////</p>
           <p class="mn"><a href="#">View All Projects</a></p>
         </div>
@@ -387,6 +592,8 @@
 
 
     </div>
+    <script type="module" src="/js/preloader.js"></script>
+    <script type="module" src="/js/theme.js"></script>
     <script type="module" src="/js/transition.js"></script>
     <script type="module" src="/js/lenis-scroll.js"></script>
     <script type="module" src="/js/menu.js"></script>
@@ -395,6 +602,7 @@
     <script type="module" src="/js/services.js"></script>
     <script type="module" src="/js/footer.js"></script>
     <script type="module" src="/js/about.js"></script>
+    <script type="module" src="/js/wow.js"></script>
     
     
   </body>
