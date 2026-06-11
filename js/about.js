@@ -181,4 +181,9 @@ document.addEventListener("DOMContentLoaded", () => {
       ScrollTrigger.refresh();
     }, 200);
   });
+
+  // Call refresh on full page load (when images, fonts, styles are fully ready)
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+  });
 });
