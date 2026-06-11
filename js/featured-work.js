@@ -156,8 +156,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Run animations on page load
   initAnimations();
 
+  // Refresh ScrollTrigger to ensure correct offsets after pinning heights
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 200);
+
   // Re-run animations on window resize to recalculate positions and trigger points
   window.addEventListener("resize", () => {
     initAnimations();
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 200);
   });
 });

@@ -146,13 +146,39 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTriggerInstances.push(tag5Animation.scrollTrigger); // Store instance
       }
     }
+
+    // Experience timeline reveal animation
+    const timelineItems = document.querySelectorAll(".timeline-item");
+    if (timelineItems.length > 0) {
+      const experienceAnimation = gsap.from(".timeline-item", {
+        y: 60,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.25,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".experience-section",
+          start: "top 80%", // Reveal when top of section enters 80% of viewport
+          toggleActions: "play none none none",
+        }
+      });
+      scrollTriggerInstances.push(experienceAnimation.scrollTrigger); // Store instance
+    }
   };
 
   // Run animations on page load
   initAnimations();
 
+  // Wait a short tick for all DOM updates/layout changes to settle, then refresh triggers
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 200);
+
   // Re-run animations on window resize to recalculate trigger points
   window.addEventListener("resize", () => {
     initAnimations();
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 200);
   });
 });
