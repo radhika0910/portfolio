@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top top", // Start when top of trigger hits top of viewport
       end: `+=${window.innerHeight * 5}px`, // Extend scroll distance
       pin: true, // Pin section during scroll
-      scrub: 1, // Smoothly tie animations to scroll position
+      scrub: 1.5, // Smoothed scroll-binding animation response
       onUpdate: (self) => {
         // Move titles horizontally based on scroll progress
         const xPosition = -moveDistance * self.progress;
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const scaledProgress = (self.progress - staggerOffset) * 2; // Adjust progress
           const individualProgress = Math.max(0, Math.min(1, scaledProgress)); // Clamp to [0,1]
           const newZ = -1500 + (1500 + 1500) * individualProgress; // Move from -1500 to 1500
-          const scaleProgress = Math.min(1, individualProgress * 10); // Faster scale change
+          const scaleProgress = Math.min(1, individualProgress * 3.5); // Smoother, more gradual scale entry
           const scale = Math.max(0, Math.min(1, scaleProgress)); // Clamp scale to [0,1]
           gsap.set(featuredImgCard, {
             z: newZ,
