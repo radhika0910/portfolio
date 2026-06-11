@@ -61,9 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
           scale: 0.85, // Scale down slightly to look neat
           scrollTrigger: {
             trigger: ".about-hero", // Trigger element
-            start: "top top", // Start when top of hero hits top of viewport
-            end: "bottom top", // End when bottom of hero hits top of viewport
-            scrub: 1, // Tie animation to scroll position
+            start: "top top", // Start pinning when top of hero hits top of viewport
+            end: "+=100%", // Pin for exactly 1 viewport height of scrolling
+            pin: true, // Pin the entire section in place
+            scrub: 1.5, // Increased scrub for extra smooth lag-free movement
           },
         });
         scrollTriggerInstances.push(portraitAnimation.scrollTrigger); // Store instance
